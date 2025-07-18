@@ -1,7 +1,12 @@
 package main
 
-import "fmt"
+import "hs-web-service/internal/service"
 
 func main() {
-	fmt.Println("1")
+	var mySvc service.HearthstoneSvc = service.New()
+
+	err := mySvc.GetPlayerByAccountID()
+	if err != nil {
+		panic(err)
+	}
 }
